@@ -1,0 +1,46 @@
+@charset 'utf-8';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css';
+@import 'fonts.css';
+
+/* 링크스타일 */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: #f0f0f0;
+    color: #181818;
+    font-size: 1.4rem;
+    font-family: 'Noto Sans';
+}
+
+
+/* 헤더 */
+
+.header {
+    background: #181818;
+    padding: 2rem;
+}
+
+
+/* 로고 */
+
+.logo {
+    margin: 0;
+}
+
+
+/* 메인 메뉴 */
+
+.main-menu {
+    color: #f1f1f1;
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
