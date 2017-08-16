@@ -1,87 +1,132 @@
-    @charset 'utf-8';
-    @import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css';
-    @import 'fonts.css';
-    /* Box-sizing 기본값 변경 */
-    
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
-    /* 링크스타일 */
-    
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-    
-    html {
-        font-size: 10px;
-    }
-    
-    body {
-        background: #f0f0f0;
-        color: #181818;
-        font-size: 1.4rem;
-        font-family: 'Noto Sans';
-    }
-    /* 헤더 */
-    
-    .header {
-        background: #181818;
-        padding: 2rem;
-        position: relative;
-    }
-    /* 로고 */
-    
-    .logo {
-        margin: 0;
-    }
-    /* 메인 메뉴 제어 버튼  */
-    
-    .menubar-container {
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .btn-menubar {
-        border: 0;
-        margin: 0;
-        padding: 40px 0 0 0;
-        width: 40px;
-        height: 40px;
-        background: rgba(0, 0, 0, 0);
-        overflow: hidden;
-        cursor: pointer;
-    }
-    
-    .menubar {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: #fff;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    .menubar-top {
-        top: 0;
-    }
-    
-    .menubar-middle {
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    .menubar-bottom {
-        bottom: 0;
-    }
-    /* 메인 메뉴 */
-    /*  
+@charset 'utf-8';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css';
+@import 'fonts.css';
+
+/* Box-sizing 기본값 변경 */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* 숨김콘테츠 */
+
+legend,
+.a11y-hidden {
+    position: absolute;
+    left: -9999em;
+    font-size: 0;
+    line-height: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px 0 0 -1px;
+    overflow: hidden;
+}
+
+
+/* 링크스타일 */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: #f0f0f0;
+    color: #181818;
+    font-size: 1.4rem;
+    font-family: 'Noto Sans';
+}
+
+
+/* 헤더 */
+
+.header {
+    background: #181818;
+    padding: 2rem;
+    position: relative;
+}
+
+
+/* 로고 */
+
+.logo {
+    margin: 0;
+}
+
+
+/* 메인 메뉴 제어 버튼  */
+
+.menubar-container {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.btn-menubar {
+    outline: 5px solid blue;
+    border: 0;
+    margin: 0;
+    padding: 40px 0 0 0;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menubar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.menubar-top {
+    top: 0;
+}
+
+.menubar-act .menubar-top {
+    top: 50%;
+    transform: rotate(135deg)
+}
+
+.menubar-middle {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menubar-act .menubar-middle {
+    transform: translate(-100%, -50%);
+}
+
+.menubar-bottom {
+    bottom: 0;
+}
+
+.menubar-act .menubar-bottom {
+    top: 50%;
+    transform: rotate(-135deg);
+}
+
+
+/* 메인 메뉴 */
+
+
+/*  
 .main-menu {
     color: #f1f1f1;
     list-style: none;
@@ -109,33 +154,132 @@
     font-family: 'NotoSans-Bold';
     padding: 1rem 0;
 } */
-    
-    .main-menu {
-        list-style: none;
-        color: #fff;
-        background: rgba(0, 0, 0, 0.8);
-        position: fixed;
-        left: -10rem;
-        top: 0;
-        margin: 0;
-        width: 0;
-        overflow: hidden;
-        height: 100vh;
-        font-size: 2rem;
-        padding: 5rem;
-        font-style: 'Noto Sans Bold', sans-serif;
-        transition: all 0.5s;
-    }
-    
-    .main-menu-act {
-        left: 0;
-        width: 70vw;
-    }
-    
-    .main-menu li {
-        margin-bottom: 1rem;
-    }
-    
-    .main-menu a {
-        display: block;
-    }
+
+.main-menu {
+    list-style: none;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: -10rem;
+    top: 0;
+    margin: 0;
+    width: 0;
+    overflow: hidden;
+    height: 100vh;
+    font-size: 2rem;
+    padding: 5rem;
+    font-style: 'Noto Sans Bold', sans-serif;
+    transition: all 0.5s;
+}
+
+.main-menu-act {
+    left: 0;
+    width: 70vw;
+}
+
+.main-menu li {
+    margin-bottom: 1rem;
+}
+
+.main-menu a {
+    display: block;
+}
+
+
+/* 검색폼 */
+
+.search-form {
+    margin-top: 20px;
+}
+
+.search-form fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.search-form input[type='search'] {
+    border: 1px solid #aaa;
+    padding: 5px 1px 1px 5px;
+    margin: 0 5px 0 0;
+    width: calc(100% - 45px);
+    /* rem 단위 사용 시 safari에서 버그가 발생할 수 있슴. */
+    height: 30px;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+.search-form input[type='image'] {
+    width: 36px;
+    height: 36px;
+    vertical-align: middle;
+}
+
+
+/* 메인 콘텐츠 */
+
+.content {
+    padding: 2rem;
+}
+
+
+/* 웹카페 서적 */
+
+.book {}
+
+.subject {
+    height: 60px;
+    background: skyblue url('images/sprite_main.png') no-repeat;
+    padding-left: 70px;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.en-subject {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.book-subject {
+    background-position: 0 0px;
+}
+
+.book-subject .en-subject {
+    color: #abd375;
+}
+
+.book-cover {
+    margin: 1rem auto;
+    width: 60%;
+    text-align: center;
+}
+
+.book-cover img {
+    max-width: 100%;
+    height: auto;
+}
+
+.book-detail {
+    text-align: center;
+}
+
+.book-heading,
+.book-author-name,
+.book-grade {
+    margin: 0;
+}
+
+.book-author,
+.book-author-name {
+    display: inline-block;
+}
+
+.book-grade::before {
+    content: "★★★★★";
+    font-size: 2.5rem;
+    color: #afd371;
+}
+
+.book-summary {
+    line-height: 1.5;
+}
