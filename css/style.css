@@ -223,22 +223,23 @@ body {
 }
 
 
-/* 웹카페 서적 */
-
-.book {}
+/* 메인 콘텐츠 제목 공통 */
 
 .subject {
     height: 60px;
-    background: skyblue url('images/sprite_main.png') no-repeat;
+    background: url('images/sprite_main.png') no-repeat;
     padding-left: 70px;
     font-size: 2rem;
-    margin: 0;
+    margin: 1rem 0;
 }
 
 .en-subject {
     display: block;
     margin-top: 0.5rem;
 }
+
+
+/* 웹카페 서적 */
 
 .book-subject {
     background-position: 0 0px;
@@ -282,4 +283,175 @@ body {
 
 .book-summary {
     line-height: 1.5;
+}
+
+.qna-subject {
+    background-position: 0 -115px;
+}
+
+.qna-subject .en-subject {
+    color: #c7b39c;
+}
+
+.qna-list li {
+    margin: 1rem 0;
+}
+
+.qna-list a {
+    display: inline-block;
+    width: calc(100% - 70px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.qna-list time {
+    float: right;
+}
+
+
+/* 새소식 */
+
+.news-subject {
+    background-position: 0 -230px;
+}
+
+.news-subject .en-subject {
+    color: #e8ca58;
+}
+
+.news-video {
+    margin: 1rem 0;
+    width: 100%;
+    height: auto;
+}
+
+.news-summery {
+    line-height: 1.5;
+}
+
+.news-date {
+    display: block;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+
+/* 인기 검색어 */
+
+.favorite-keyword-subject {
+    background-position: 0 -345px;
+}
+
+.favorite-keyword-subject .en-subject {
+    color: orange;
+}
+
+.favorite-keyword-list {
+    padding: 0;
+    overflow: hidden;
+}
+
+.favorite-keyword-list li {
+    counter-increment: number;
+    margin: 1rem 0;
+    line-height: 30px;
+}
+
+.favorite-keyword-list li::before {
+    content: counter(number, decimal);
+    background: #ec6b43;
+    color: #fff;
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.keyword-wrap {
+    background: silver;
+    display: inline-block;
+    width: calc(100% - 35px);
+    line-height: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.keyword-wrap span {
+    background: brown;
+    color: #fff;
+    border-radius: 15px 0 0 15px;
+    padding-left: 2rem;
+    display: inline-block;
+    line-height: 30px;
+}
+
+.no1 {
+    width: 70%;
+}
+
+.no2 {
+    width: 60%;
+}
+
+.no3 {
+    width: 50%;
+}
+
+.no4 {
+    width: 40%;
+}
+
+.no5 {
+    width: 30%;
+}
+
+
+/* 푸터 */
+
+.footer {
+    padding: 2rem;
+    color: #fff;
+    background-color: #432219;
+    background-image: repeating-linear-gradient(-45deg, #462a1f 5px, #462a1f 10px, #432219 10px, #432219 20px);
+}
+
+
+/* 주소 */
+
+address,
+.copyright {
+    font-style: normal;
+    text-align: center;
+}
+
+
+/* 가이드 링크 */
+
+.guide {
+    list-style: none;
+    padding: 0;
+}
+
+.guide::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.guide li {
+    width: 50%;
+    letter-spacing: -1px;
+    float: left;
+    margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 768px) {
+    .guide li {
+        width: 25%;
+        text-align: center;
+    }
 }
